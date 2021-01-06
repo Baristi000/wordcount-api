@@ -1,5 +1,5 @@
 from pyspark import SparkContext
-sc = SparkContext("local", "word count url")
+sc = SparkSession.builder.appName("Trieu count app").getOrCreate()
 
 def wordcount(data:str):
     data = data.replace('\n', ' ').split(" ")
