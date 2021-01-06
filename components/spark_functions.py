@@ -1,5 +1,8 @@
 from pyspark.sql import SparkSession
-sc = SparkSession.builder.appName("Trieu count app").getOrCreate()
+sc = SparkSession.builder
+sc = sc.appName("Trieu count app")
+sc = sc.master("local")
+sc = sc.getOrCreate()
 
 def wordcount(data:str):
     data = list(data.replace('\n', ' ').split(" "))
